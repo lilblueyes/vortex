@@ -1,0 +1,75 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+#vortex {
+  width: 1200px;
+  height: 900px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes moveAndShrinkUniform {
+  0% {
+    transform: rotate(var(--start-angle)) translate(300px) scale(1);
+    opacity: 1;
+  }
+  /* 10% {
+    transform: rotate(calc(var(--start-angle) + 5deg)) translate(150px) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(calc(var(--start-angle) + 10deg)) translate(150px)
+      scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: rotate(calc(var(--start-angle) + 15deg)) translate(150px)
+      scale(1);
+    opacity: 1;
+  } */
+  40% {
+    transform: rotate(calc(var(--start-angle) + 20deg)) translate(300px)
+      scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: rotate(calc(var(--start-angle) + 35deg)) translate(150px)
+      scale(0.4);
+    opacity: 0.5;
+  }
+  65% {
+    transform: rotate(calc(var(--start-angle) + 40deg)) translate(50px) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(calc(var(--start-angle) + 50deg)) translate(0px) scale(0);
+    opacity: 0;
+  }
+}
+
+.square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  animation: moveAndShrinkUniform 10s linear forwards;
+}
